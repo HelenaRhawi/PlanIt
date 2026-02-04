@@ -46,9 +46,6 @@ function LogIn () {
                 <button type="submit">Log in</button>
             </form>
 
-            <br />
-
-            <Link to="/">Home</Link>
         </div>
     )
 }

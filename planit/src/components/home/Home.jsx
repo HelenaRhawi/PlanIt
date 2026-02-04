@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import './Home.css'
 
 function Home (){
     return (
@@ -7,9 +8,7 @@ function Home (){
             <p>Welcome to a life of Amazingness</p>
             <p>PlanIt will help you get organized</p>
 
-            <Link to="/login">Get Started</Link>
-            <br />
-            <Link to="/contact">Contact us</Link>
+            <Link className='link-nav' to="/login">Get Started</Link>
         </div>
     )
 }
