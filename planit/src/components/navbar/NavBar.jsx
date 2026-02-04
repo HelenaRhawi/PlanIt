@@ -14,6 +14,10 @@ function Navbar () {
             {location.pathname !== '/profile' &&(
             <Link to="/profile" className="nav-link">Profile</Link>
             )}
+
+            {location.pathname !== '/todolist' &&(
+                <Link to="/todolist" className="nav-link">Todo List</Link>
+            )}
         </nav>
 
         <div className="bottom-nav">
