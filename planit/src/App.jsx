@@ -1,33 +1,21 @@
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import Home from './components/home/Home.jsx'
 import LogIn from './components/login/LogIn.jsx'
+import Contacts from './components/contact/Contact.jsx'
+import TodoList from './components/todo/TodoList.jsx'
+import Profile from './components/profile/Profile.jsx'
 import './App.css'
 
 function App() {
-  const navigate = useNavigate()
-
-  return (
-    <div>
-      <button onClick={() => navigate('/login')}>
-        Log In
-      </button>
-
+return (
     <Routes>
-      <Route
-      path="/"
-      element ={
-        <>
-        <h1>PlanIt</h1>
-        <p>Planit will help you with...</p>
-        <p>Getting orginized with your daily life.</p>
-        <p>Planing your day, month and year.</p>
-      </>
-
-      }
-      />
-      
+      <Route path="/" element={<Home />} />
       <Route path="/login" element={<LogIn />}/>
+      <Route path="/contacts" element={<Contacts />} />
+      <Route path="/profile" element={<Profile />}/>
+      <Route path="/todolist" element={<TodoList />}/>
     </Routes>
-    </div>
+
   )
 }
 
