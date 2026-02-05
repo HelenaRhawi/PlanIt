@@ -1,4 +1,6 @@
+import { Link, useLocation } from "react-router-dom"
 import { useEffect, useState } from 'react'
+import './TodoList.css'
 
 function TodoItem({ todo, toggleComplete}) {
     return (
@@ -23,6 +25,8 @@ function TodoList () {
     const [input, setInput] = useState('')
     const [loading, setLoading] =useState(false)
     const [error, setError] = useState('')
+
+    const today = new Date().toISOString().split('T')[0]
 
     //hämta todos från API
     useEffect(() => {
@@ -65,6 +69,16 @@ function toggleComplete(id) {
     )
 }
 
+const handleFinishDay = () => {
+    const todosByDate =
+    JSON.parse(localStorage.getItem('todosByDate')) || {}
+
+    todosByDate[today] = todos
+
+    localStorage.setItem('todosByDate', JSON.stringify(todosByDate))
+
+}
+
 return (
     <div>
         <h2>Todos</h2>
@@ -87,6 +101,10 @@ return (
                 />
             ))}
         </ul>
+
+                    {location.pathname !== '/profile' &&(
+                        <Link to="/profile" className="navLink">Todone!</Link>
+                    )}
 
     </div>
 )
