@@ -1,16 +1,20 @@
-# React + Vite
+# PlanIt - React SPA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Beskrivning
+PlanIt är en Single Page Application (SPA) byggd i React som hjälper användaren planera sina dagliga uppgifter (todos).
+Appen innehåller funktioner för att skapa och bocka av todos, visa historik över tidigare dagar samt följa en daglig streak för att se hur många dagar i rad användaren har slutfört sina uppgifter.
 
-Currently, two official plugins are available:
+Projektet är byggt som en client-side routad applikation med React Router och använder ett externt API för att hämta exempeldata.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Starta Projektet
+1. Klona repot: 'git clone <repo-url>'
+2. Installera: 'npm install'
+3. Starta appen: 'npm run dev'
+4. Appen körs då på länken som kommer upp.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tekniska val - reflektion 
+Jag valde att dela upp appen i flera komponenter för att öka användbarheten och göra koden mer läsbar. Routing via React Router gör det möjligt att navigera utan reload. 
+TodoItem tar emot props från TodoList, vilket visar dataflöde från förälder till barn. 
+state hanteras lokalt med useState för input och todos, vilket gör det enkelt att testa komponenterna.
+API:t JSONPlaceholder valdes eftersom att det är bra för att hämta datahämtning i en SPA.
+Daily streak och historik visar interaktivitet. 
