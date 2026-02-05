@@ -23,7 +23,7 @@ function TodoItem({ todo, toggleComplete}) {
 function TodoList () {
     const [todos, setTodos] = useState([]) 
     const [input, setInput] = useState('')
-    const [loading, setLoading] =useState(false)
+    const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
     const today = new Date().toISOString().split('T')[0]
